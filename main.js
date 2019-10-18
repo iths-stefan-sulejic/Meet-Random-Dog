@@ -28,18 +28,40 @@ function randomCatName(){
 
 let animalName = document.querySelector("p.animalName")
 
+let result
+
 let buttonDog = document.querySelector("button.meetDog")
 buttonDog.addEventListener("click", async function(){
-    let resultDogs = await Dogs()
-    document.getElementById('image').style.backgroundImage = "url('"+[resultDogs]+"')"
+    result = await Dogs()
+    document.getElementById('image').style.backgroundImage = "url('"+[result]+"')"
     let dogsName = await randomDogName()
     animalName.innerText = "This dog is called " + dogsName;
 })
 
 let buttonCat = document.querySelector("button.meetCat")
 buttonCat.addEventListener("click", async function(){
-    let resultCats = await Cats()
-    document.getElementById('image').style.backgroundImage = "url('"+[resultCats]+"')"
+    result = await Cats()
+    document.getElementById('image').style.backgroundImage = "url('"+[result]+"')"
     let catsName = await randomCatName()
     animalName.innerText = "This cat is called " + catsName;
+})
+
+let favorites = document.querySelector(".favorites")
+
+let buttonFavorites = document.querySelector("#image > section > p")
+buttonFavorites.addEventListener("click", async function(){
+    let exists = false
+    let saved = document.querySelectorAll("body > section.favorites > img")
+
+    // console.log(saved)
+    for(i=0; i <= saved.length; i++){
+        
+    }
+
+    if(!exists){
+        let list = document.createElement("img")
+        list.setAttribute("src", result)
+        list.classList.add("saved")
+        favorites.appendChild(list)
+    }
 })
