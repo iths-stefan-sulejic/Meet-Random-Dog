@@ -1,3 +1,11 @@
+body{
+    background-color: peachpuff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+}
+
 button{
     font-size: 20px;
     font-weight: bold;
@@ -15,23 +23,43 @@ p{
     margin: 20px;
 }
 
-body{
-    background-color: peachpuff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 0px;
-}
-
-img{
+#image{
     width: 600px;
     height: 600px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border: 2px solid black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
-.puppyName{
+.hidden-fade{
+    margin: 0px;
+    width: 100%;
+    max-width: 0;
+    overflow: hidden;
+    height: 50px;
+    white-space: nowrap;
+    background-color: rgba(0,0,0,0.5);
+    transition: max-width 0.6s;
+}
+
+.hidden-text{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    color: white;
+}
+
+#image:hover .hidden-fade{
+    max-width: 100%;
+}
+
+.animalName{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border: 2px solid black;
